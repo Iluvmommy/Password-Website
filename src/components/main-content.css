@@ -2,7 +2,6 @@
   font-family: "Quicksand", sans-serif;
 }
 
-
 main {
   display: flex;
   flex-direction: column;
@@ -69,3 +68,11 @@ input:focus + #label-line::after,
 input:valid + #label-line::after {
   transform: translateX(0%);
 }
+
+/* .hide {
+  visibility: hidden;
+}
+
+input:valid + .hide {
+  visibility: visible;
+} */

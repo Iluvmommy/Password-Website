@@ -1,18 +1,20 @@
-import commonPasswords from './info';
+import commonPasswords from './info.js';
+
+export var v;
 
 function checkString(str) {
-    for(var i = 0; i < commonPasswords.length; i++) {
-        var bool = (commonPasswords[i] === str ) ? true : false;
-    }
-    return bool;
+        for (var i = 0; i < commonPasswords.length; i++) {
+            var bool = (commonPasswords[i] === str) ? true : false;
+        }
+        return bool;
+
 }
 
 export function getTime(str) {
     var time = [];
 
-    if (checkString(str)) {
+    if (checkString(str))
         time = "less than one second, ";
-    }
     else {
 
         var chars = 94;
