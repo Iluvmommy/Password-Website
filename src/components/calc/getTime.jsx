@@ -1,11 +1,7 @@
 import commonPasswords from './info.js';
 
-export var v;
-
 function checkString(str) {
-        for (var i = 0; i < commonPasswords.length; i++) {
-            var bool = (commonPasswords[i] === str) ? true : false;
-        }
+        var bool = commonPasswords.indexOf(str) > -1;
         return bool;
 
 }
