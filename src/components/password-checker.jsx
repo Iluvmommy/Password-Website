@@ -1,8 +1,9 @@
+
 import React, { Component } from "react";
-import "./main-content.css";
+import "./password-checker.css";
 import getTime from './calc/getTime.jsx';
 
-class MainContent extends Component {
+class PasswordChecker extends Component {
   state = {
     validInput: null,
   };
@@ -44,4 +45,4 @@ class MainContent extends Component {
   }
 }
 
-export default MainContent;
+export default PasswordChecker;
