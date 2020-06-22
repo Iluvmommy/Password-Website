@@ -3,7 +3,7 @@
   "name": "password-generator",
   "icons": [],
   "start_url": ".",
-  "display": "stand alone",
+  "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
