@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 import "./main-content.css";
+import getTime from './calc/getTime.jsx';
 
 class MainContent extends Component {
   state = {
     validInput: null,
   };
+
+  onChange = () => {
+    var v = document.getElementById("input").value;
+    if (v === "") 
+      this.setState({ validInput: null });
+    else if (v.length > 0)
+      this.setState({ validInput: true });
+  };
+
   render() {
     const Info = this.state.validInput ? (
-      <h1 className="text font">hello</h1>
+    <h1 className="text font">{getTime(document.getElementById('input').value)}</h1>
     ) : null;
 
     return (
@@ -19,7 +29,7 @@ class MainContent extends Component {
             type="text"
             autoComplete="off"
             name="password"
-            value={this.state.validInput}
+            onChange={this.onChange}
             required
           />
           <label htmlFor="password" id="label-line">

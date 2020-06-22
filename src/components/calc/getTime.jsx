@@ -1,12 +1,11 @@
-import commonPasswords from './info.js';
+import commonPasswords from './info.jsx';
 
 function checkString(str) {
         var bool = commonPasswords.indexOf(str) > -1;
         return bool;
-
 }
 
-export function getTime(str) {
+export default function getTime(str) {
     var time = [];
 
     if (checkString(str))
