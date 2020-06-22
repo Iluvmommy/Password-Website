@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from 'react-router-dom';
 
 const styles = {
   position: "absolute",
@@ -18,8 +19,8 @@ class NavBar extends Component {
         <header style={styles}>
           <nav>
             <h1>Password Helper</h1>
-            <li><a href="/">password generator</a></li>
-            <li><a href="/">password safety</a></li>
+            <Link to="/password-generate"><li>password generator</li></Link>
+            <Link><li>password safety</li></Link>
           </nav>
         </header>
       </>
