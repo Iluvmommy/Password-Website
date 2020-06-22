@@ -1,5 +1,19 @@
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fade-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
 .font {
   font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+}
+
+.font #content-text {
+  font-size: 18px;
 }
 
 main {
@@ -13,8 +27,19 @@ main {
 #form {
   position: relative;
   height: 50px;
-  width: 350px;
+  width: 50%;
+  max-width: 450px;
+  min-width: 200px;
   overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+#timeInfo {
+  width: 50%;
+  min-height: 73px;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
 }
 
 #input {
@@ -67,4 +92,13 @@ input:valid + #label-line #content-text {
 input:focus + #label-line::after,
 input:valid + #label-line::after {
   transform: translateX(0%);
+}
+
+.timeValue {
+  animation: fade-in 1.6s;
+}
+
+.timeValueAfter {
+  animation: fade-out 1.2s;
+  opacity: 0;
 }

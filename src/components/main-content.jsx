@@ -17,8 +17,8 @@ class MainContent extends Component {
 
   render() {
     const Info = this.state.validInput ? (
-    <h1 className="text font">{getTime(document.getElementById('input').value)}</h1>
-    ) : null;
+    <h2 className="font timeValue">{getTime(document.getElementById('input').value)}</h2>
+    ) : <h2 className="font timeValueAfter">less than one second</h2>;
 
     return (
       <main>
@@ -36,7 +36,9 @@ class MainContent extends Component {
             <span id="content-text">Password</span>
           </label>
         </form>
-        {Info}
+        <div id="timeInfo">
+          {Info}
+        </div>
       </main>
     );
   }
