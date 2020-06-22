@@ -1,14 +1,14 @@
 import commonPasswords from "./info.jsx";
 
 function checkString(str) {
-  var bool = commonPasswords.indexOf(str) > -1;
-  return bool;
+  var bool = commonPasswords.indexOf(str);
+  return (bool === -1) ? false : true;
 }
 
 export default function getTime(str) {
   var time = [];
 
-  if (checkString(str)) time = "less than one second";
+  if (checkString(str)) return "less than one second";
   else {
     var chars = 94;
     var rate = 2800000000;
