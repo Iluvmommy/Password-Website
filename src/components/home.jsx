@@ -5,7 +5,7 @@ class Home extends Component {
     render() { 
         return ( 
             <>
-                <h1>learn about password safety</h1>
+            <h1>learn about safetly</h1> 
             </>
          );
     }

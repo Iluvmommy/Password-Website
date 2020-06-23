@@ -21,7 +21,7 @@ class PasswordChecker extends Component {
     ) : <h2 className="font timeValueAfter">less than one second</h2>;
 
     return (
-      <main>
+      <>
         <h2 className="font">Is This a Good Password?</h2>
         <form id="form" className="font">
           <input
@@ -39,7 +39,7 @@ class PasswordChecker extends Component {
         <div id="timeInfo">
           {Info}
         </div>
-      </main>
+      </>
     );
   }
 }

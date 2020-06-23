@@ -10,11 +10,13 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/password-checker" exact component={PasswordChecker} />
-        <Route path="/password-generator" component={PasswordGenerator} />
-      </Switch>
+      <main>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/password-checker" exact component={PasswordChecker} />
+          <Route path="/password-generator" component={PasswordGenerator} />
+        </Switch>
+      </main>
     </Router>
   );
 }
