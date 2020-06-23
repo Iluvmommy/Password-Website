@@ -1,7 +1,6 @@
-
 import React, { Component } from "react";
 import "./password-checker.css";
-import {getTime} from './calc/getTime.jsx';
+import getTime from './calc/getTime.jsx';
 
 class PasswordChecker extends Component {
   state = {

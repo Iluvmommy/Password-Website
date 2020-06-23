@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Link from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const styles = {
   position: "absolute",
@@ -9,20 +9,22 @@ const styles = {
   background: "#4dd2ff",
   top: "0",
   left: "0",
-  fontFamily: "'Quicksand', san-serif"
+  fontFamily: "'Quicksand', san-serif",
 };
 
 class NavBar extends Component {
   render() {
     return (
       <>
-        <header style={styles}>
-          <nav>
-            <h1>Password Helper</h1>
-            <Link to="/password-generate"><li>password generator</li></Link>
-            <Link><li>password safety</li></Link>
-          </nav>
-        </header>
+        <nav style={styles}>
+          <h1>Password Helper</h1>
+          <Link to="/password-generate">
+            <li>password generator</li>
+          </Link>
+          <Link>
+            <li>password safety</li>
+          </Link>
+        </nav>
       </>
     );
   }

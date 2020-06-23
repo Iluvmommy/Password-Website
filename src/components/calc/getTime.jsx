@@ -5,7 +5,7 @@ function checkString(str) {
   return (bool === -1) ? false : true;
 }
 
-export default function getTime(str) {
+export default str => {
   var time = [];
 
   if (checkString(str)) return "less than one second";

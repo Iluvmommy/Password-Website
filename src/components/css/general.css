@@ -1,0 +1,16 @@
+
+main, #inDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    height: inherit;
+    justify-content: center;
+  }
+
+  .font {
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+  }
