@@ -36,7 +36,7 @@ class NavBar extends Component {
       <header>
         <nav style={styles}>
           <Link to="/" style={title}><h1 style={{margin: "0"}}>Password Helper</h1></Link>
-          <Link to="/password-generate" style={links}>
+          <Link to="/password-generator" style={links}>
             <li>Generate a password</li>
           </Link>
           <Link to="/password-checker" style={links}>
