@@ -5,7 +5,6 @@ function fromLowToHigh(start, end) {
 }
 
 export default (pwLen, s, n, u, l) => {
-
   var lowercase = fromLowToHigh(97, 122);
   var uppercase = fromLowToHigh(65, 90);
   var numbers = fromLowToHigh(48, 57);
@@ -15,17 +14,18 @@ export default (pwLen, s, n, u, l) => {
     .concat(fromLowToHigh(91, 93))
     .concat(fromLowToHigh(123, 126));
 
-    var arrayOfPossibleCodes = [];
-    if (s) arrayOfPossibleCodes.concat(symbols);
-    if (n) arrayOfPossibleCodes.concat(numbers);
-    if (u) arrayOfPossibleCodes.concat(uppercase);
-    if (l) arrayOfPossibleCodes.concat(lowercase);
-    console.log(arrayOfPossibleCodes);
+  var arrayOfPossibleCodes = [];
+  if (s) arrayOfPossibleCodes = arrayOfPossibleCodes.concat(symbols);
+  if (n) arrayOfPossibleCodes = arrayOfPossibleCodes.concat(numbers);
+  if (u) arrayOfPossibleCodes = arrayOfPossibleCodes.concat(uppercase);
+  if (l) arrayOfPossibleCodes = arrayOfPossibleCodes.concat(lowercase);
 
-    var arrayOfPwCodes = [];
-    for (let i = 0; i < pwLen.length; i++) {
-        arrayOfPwCodes.push(Math.floor(Math.random(arrayOfPossibleCodes)));
-    }
-    // console.log(arrayOfPwCodes);
-}
+  var arrayOfPwLetters = [];
+  var ranIndex;
+  for (let i = 0; i < pwLen; i++) {
+    ranIndex = Math.floor(Math.random() * arrayOfPossibleCodes.length);
+    arrayOfPwLetters.push(String.fromCharCode(arrayOfPossibleCodes[ranIndex]));
+  }
 
+  return arrayOfPwLetters.join("");
+};
