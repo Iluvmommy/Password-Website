@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./css/general.css";
 import "./css/password-generator.css";
 
 class PasswordGenerator extends Component {
@@ -28,11 +29,8 @@ class PasswordGenerator extends Component {
             <label htmlFor="lowercase">lowercase</label>
             <input type="radio" id="lowercase" />
           </span>
-          <button id="generateButton" className="font">
-            <span id="create">create</span>
-            <span id="emoji" role="img" aria-label="happy face">
-              &#128515;
-            </span>
+          <button id="generateBtn" className="font">
+            <div id="btn-create">create</div><div id="jiggle"></div>
           </button>
         </div>
       </>
