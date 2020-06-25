@@ -4,4 +4,8 @@
         align-items: center;
         height: 140px;
     }
+
+    #main {
+        background: none;
+    }
 }
