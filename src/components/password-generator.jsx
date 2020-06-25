@@ -10,85 +10,93 @@ class PasswordGenerator extends Component {
     numbers: false,
     uppercase: false,
     lowercase: true,
+    words: true,
   };
 
-  onChangeLen = () => {
-    var v = document.getElementsByClassName('length').value;
-    console.log(v);
-    this.setState({ pwLen: v });
-  };
+  copy = () => {
+    var copyText = document.getElementById("pw").innerHTML;
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", copyText)
+  }
 
-  onChangeInput = (element) => {
-    var v = element.value;
-    // console.log(v);
-    this.setState({element: v});
+  onChangeInput = (evt) => {
+    var v = evt.target.value;
+    this.setState({ [evt.target.name]: v });
   };
 
   render() {
     var state = this.state;
+
     return (
-      <div className="inDivs font">
-        <h2>Want a Password?</h2>
-        <div>
-          <label htmlFor="length">Length : {state.pwLen}</label>
-          <input
-            type="range"
-            name="length"
-            className="length"
-            onChange={this.onChangeLen}
-            value={state.pwLen}     
-            min="5"
-            max="65"
-          />
+      <>
+        <div className="inDivs font">
+          <h2>Want a Password?</h2>
+          <div>
+            <label htmlFor="length">Length : {state.pwLen}</label>
+            <input
+              type="range"
+              name="pwLen"
+              className="length"
+              onChange={this.onChangeInput}
+              value={state.pwLen || ""}
+              min="5"
+              max="65"
+            />
+          </div>
+          <div>
+            <label htmlFor="Symbol">Symbol</label>
+            <input
+              type="checkbox"
+              className="symbol"
+              name="symbol"
+              onChange={this.onChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="numbers">numbers</label>
+            <input
+              type="checkbox"
+              className="numbers"
+              name="numbers"
+              onChange={this.onChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="UPPERCASE">UPPERCASE</label>
+            <input
+              type="checkbox"
+              className="uppercase"
+              name="uppercase"
+              onChange={this.onChangeInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="lowercase">lowercase</label>
+            <input
+              type="checkbox"
+              className="lowercase"
+              name="lowercase"
+              onChange={this.onChangeInput}
+              defaultChecked
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="Symbol">Symbol</label>
-          <input
-            type="checkbox"
-            className="symbol"
-            onChange={() => this.onChangeInput(this)}
-          />
+        <div className="font unbound-container">
+          <div id="pw" color={(this.state.pwLen < 11)? "orange" : "green"}>
+            {generate(
+              state.pwLen,
+              state.symbol,
+              state.numbers,
+              state.uppercase,
+              state.lowercase
+            )}
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <button className="copyBtn font" onClick={this.copy}>
+              <div className="btn-copy">copy</div>
+            </button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="numbers">numbers</label>
-          <input
-            type="checkbox"
-            className="numbers"
-            onChange={() => this.onChangeInput(this)}
-          />
-        </div>
-        <div>
-          <label htmlFor="UPPERCASE">UPPERCASE</label>
-          <input
-            type="checkbox"
-            className="UPPERCASE"
-            onChange={() => this.onChangeInput(this)}
-          />
-        </div>
-        <div>
-          <label htmlFor="lowercase">lowercase</label>
-          <input
-            type="checkbox"
-            className="lowercase"
-            onChange={() => this.onChangeInput(this)}
-            defaultChecked
-          />
-        </div>
-        <div className="pw">
-          {generate(
-            state.pwLen,
-            state.symbol,
-            state.numbers,
-            state.uppercase,
-            state.lowercase
-          )}
-        </div>
-        <div style={{textAlign: "center"}}>
-          <button className="copyBtn font">
-            <div className="btn-copy">copy</div>
-          </button>
-        </div>
-      </div>
+      </>
     );
   }
 }
