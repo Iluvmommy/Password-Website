@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 svg {
@@ -17,16 +18,9 @@ svg {
 
 .text {
     position: relative;
-    min-width: 100px;
-    width: 30vw;
-    height: fit-content;
-    max-height: 50vh;
-    margin: auto 40px auto auto;
-    backdrop-filter: blur(5px);
-    background-color: rgba(142, 142, 142, 0.4);
-    padding: 20px;
+    margin: auto 200px auto auto;
+    min-width: 400px;
     text-align: center;
-    border-radius: 15px;
     font-family: 'Electrolize', sans-serif;
 }
 
@@ -45,20 +39,19 @@ svg {
     100% {fill: rgb(169, 235, 215)}
 }
 
-h1 {
-    margin-bottom: 40px;
-}
-
 .p {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    margin: 0;
+    --h: auto;
+    height: var(--h);
 }
 
 .p > span {
     opacity: 0;
     position: absolute;
+    height: var(--h);
+    left: 0;
+    top: 0;
+    margin-top: 20px;
     animation: display 20s infinite;
 }
 
@@ -74,14 +67,6 @@ span:nth-child(4) {
 span:nth-child(5) {
     animation-delay: 16s;
 }
-
-/* span:nth-child(odd) {
-    position: fixed;
-}
-
-span:nth-child(even) {
-    position: f;
-} */
 
 @keyframes display {
     0% {
@@ -101,8 +86,8 @@ span:nth-child(even) {
       }
 }
 
-@media screen and (max-height:800px) and (max-width: 1000px) {
+@media screen and (max-width: 786px) {
     .text {
-        position: absolute;
+        margin: 0;
     }
 }

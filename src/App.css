@@ -5,7 +5,13 @@
         height: 140px;
     }
 
-    #main {
-        background: none;
+    svg {
+        display: none;
+    }
+
+    #main.text {
+        margin: 0;
+        left: 50%;
+        top: 50%;
     }
 }
