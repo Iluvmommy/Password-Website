@@ -4,13 +4,13 @@ import getTime from './calc/getTime.jsx';
 
 class PasswordChecker extends Component {
   state = {
-    validInput: null,
+    validInput: false,
   };
 
   onChange = () => {
     var v = document.getElementById("input").value;
     if (v === "") 
-      this.setState({ validInput: null });
+      this.setState({ validInput: false });
     else if (v.length > 0)
       this.setState({ validInput: true });
   };
@@ -18,7 +18,7 @@ class PasswordChecker extends Component {
   render() {
     const Info = this.state.validInput ? (
     <h2 className="font timeValue">{getTime(document.getElementById('input').value)}</h2>
-    ) : <h2 className="font timeValueAfter">less than one second</h2>;
+    ) : <></>;
 
     return (
       <>
@@ -38,6 +38,13 @@ class PasswordChecker extends Component {
         </form>
         <div id="timeInfo">
           {Info}
+        </div>
+        <div>
+          <pre>
+            <li>Please note that this is an estimate of brute-force hacking.</li>
+            <li>Hackers can also target certain words and names.</li>
+            <li>The software is client-side. Information cannot be passed across the internet</li>
+          </pre>
         </div>
       </>
     );
