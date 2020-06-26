@@ -5,7 +5,7 @@
     height: 100%;
 }
 
-img {
+svg {
     width: auto;
     height: 100%;
     top: 0;
@@ -22,4 +22,19 @@ img {
     text-align: center;
     border-radius: 15px;
     font-family: 'Electrolize', sans-serif;
+}
+
+#background path:nth-child(n+280) {
+    animation: twinkle 7s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0% {fill: lightblue}
+    12.5% {fill: rgb(185, 182, 249)}
+    25% {fill: rgb(235, 151, 232)}
+    37.5% {fill: rgb(228, 153, 163)}
+    50% {fill: rgb(232, 198, 169)}
+    62.5% {fill: rgb(212, 225, 164)}
+    75% {fill: rgb(178, 230, 173)}
+    100% {fill: rgb(169, 235, 215)}
 }
