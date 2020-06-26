@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#root {
+  height: inherit;
+}
+
+html {
+  min-width: 340px;
+}

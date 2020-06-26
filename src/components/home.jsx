@@ -322,7 +322,7 @@ export default class Home extends Component {
         <div className="text">
           <p className="font p">
             <span>
-              Hacker attack every <em>39</em> seconds
+              There is a hacker attack every <em>39</em> seconds
             </span>
             <span>
               You can purchase a consumer account for $1 on the dark market
@@ -333,7 +333,7 @@ export default class Home extends Component {
             <span>
               Cybercrime is more profitable than global illegal drug trade
             </span>
-            <span>We are all lazy...we hate passwords</span>
+            <span>Humans hate passwords</span>
           </p>
           </div>
         </div>
