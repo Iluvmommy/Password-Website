@@ -3,6 +3,9 @@
     background-color: rgb(207, 243, 255);
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 svg {
@@ -13,12 +16,15 @@ svg {
 }
 
 .text {
-    position: absolute;
-    width: 400px;
-    top: 30%;
-    left: 70%;
+    position: relative;
+    min-width: 100px;
+    width: 30vw;
+    height: fit-content;
+    max-height: 50vh;
+    margin: auto 40px auto auto;
     backdrop-filter: blur(5px);
-    padding: 8px;
+    background-color: rgba(142, 142, 142, 0.4);
+    padding: 20px;
     text-align: center;
     border-radius: 15px;
     font-family: 'Electrolize', sans-serif;
@@ -37,4 +43,66 @@ svg {
     62.5% {fill: rgb(212, 225, 164)}
     75% {fill: rgb(178, 230, 173)}
     100% {fill: rgb(169, 235, 215)}
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.p {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.p > span {
+    opacity: 0;
+    position: absolute;
+    animation: display 20s infinite;
+}
+
+span:nth-child(2) {
+    animation-delay: 4s;
+}
+span:nth-child(3) {
+    animation-delay: 8s;
+}
+span:nth-child(4) {
+    animation-delay: 12s;
+}
+span:nth-child(5) {
+    animation-delay: 16s;
+}
+
+/* span:nth-child(odd) {
+    position: fixed;
+}
+
+span:nth-child(even) {
+    position: f;
+} */
+
+@keyframes display {
+    0% {
+        opacity: 0;     
+      }
+      10% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+}
+
+@media screen and (max-height:800px) and (max-width: 1000px) {
+    .text {
+        position: absolute;
+    }
 }

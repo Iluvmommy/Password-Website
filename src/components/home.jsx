@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import "./css/general.css";
 import "./css/home.css";
 
-class Home extends Component {
-  state = {};
+export default class Home extends Component {
+
   render() {
     return (
       <div id="main">
 <svg id="background" width="1043" height="710" viewBox="0 0 1043 710" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="undraw_hacker_mind_6y85 1" clip-path="url(#clip0)">
+<g id="undraw_hacker_mind_6y85 1" clipPath="url(#clip0)">
 
 <path id="Vector" d="M863 -5H-12V465.679H863V-5Z" fill="#3F3D56"/>
 <path id="Vector_2" d="M153.895 61.358H146.179V73.7037H153.895V61.358Z" fill="#AFD0E8"/>
@@ -321,7 +321,7 @@ class Home extends Component {
 </svg>
         <div className="text">
           <h1 className="font">Keep YOUR data safe</h1>
-          <p className="font urgent">
+          <p className="font p" onLoad={this.carousel}>
             <span>
               Hacker attack every <em>39</em> seconds
             </span>
@@ -336,10 +336,10 @@ class Home extends Component {
             </span>
             <span>We are all lazy...we hate passwords</span>
           </p>
+          </div>
         </div>
-      </div>
     );
   }
 }
 
-export default Home;
+
